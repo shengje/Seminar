@@ -1,0 +1,42 @@
+\documentclass[landscape,headrule,footrule]{foils}
+\usepackage{foilenv}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\title       {-Title-}
+\author      {\large -Author- \\[1em]
+              -Institute- \\
+              National Chiao Tung University, Hsinchu}
+\date        {\today}
+\MyLogo      {}
+\Restriction {}
+\rightfooter {\thepage}
+\rightheader {\hyperlink{toc}{top~$\blacktriangle$}}
+\leftheader  {}
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+\tableofcontents
+
+\begin{frame}[\secname]
+\begin{center}
+contents
+\end{center}
+\end{frame}
+
+\section{Summary}
+\tableofcontents
+\begin{frame}[\secname]
+\begin{center}
+contents
+\end{center}
+\end{frame}
+
+%\references
+%\makethanks
+
+\endslide
+\end{document}

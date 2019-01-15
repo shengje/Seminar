@@ -1,0 +1,249 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{foilenv}[2014/11/19]
+
+% default
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{latexsym}
+\RequirePackage{amssymb}
+\RequirePackage{amsfonts}
+\RequirePackage{amsmath}
+
+% pkg-options
+\PassOptionsToPackage{obeyspaces}{url}
+
+% foilenv
+\RequirePackage{calc,xparse,xcolor}
+\RequirePackage[colorhighlight,coloremph,display]{texpower}
+\RequirePackage[bookmarks=true,hidelinks]{hyperref}
+
+% common-packages
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{multicol}
+\RequirePackage{multirow}
+\RequirePackage{algpseudocode}
+\RequirePackage[comma]{natbib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% declare variables
+\newcounter{toclevel}
+\newcounter{tocncols}
+\newlength\foilfootskip
+\newlength\belowtitleskip
+
+%-- options -----------------------------------------------
+	
+	% define mycolor
+	\definecolor{mytitlecolor}{rgb}{0,0,0.5}
+	\definecolor{mycitecolor}{rgb}{0,0.5,0}
+	\definecolor{mylinkcolor}{rgb}{0,0,0}
+	\definecolor{myfilecolor}{rgb}{0,0.5,0.8}
+	\definecolor{myurlcolor}{rgb}{0,0.5,0.8}
+	
+	% margin and padding
+	\newdimen\vmargin \vmargin 24pt
+	\newdimen\hmargin \hmargin 48pt
+	\newdimen\padding \padding 36pt
+	
+	% layout of foiltex
+	\foilheadskip      0pt minus 36pt
+	\foilfootskip     36pt minus 36pt
+	\authordateskip   2.em
+	\belowtitleskip   48pt
+	
+	% tableofcontents
+	\setcounter{toclevel}{2}
+	\setcounter{tocncols}{1}
+	\def\contentsname{Outline}
+	\def\tocitem{$\bullet$}
+	\def\tocitemi{\textbf{--}}
+	\def\tocitemii{\textbf{--}}
+	
+	% def
+	\def\vec#1{\boldsymbol{\mathbf{#1}}}
+	\def\ra#1{\renewcommand{\arraystretch}{#1}}
+
+%----------------------------------------------------------
+
+% pagelayout
+\dimen0=\paperheight
+\dimen1=\paperwidth
+\newcommand\setlayout{
+\setlength{\paperheight   }{  \dimen0 }
+\setlength{\paperwidth    }{  \dimen1 }
+\setlength{\voffset       }{    -72pt }
+\setlength{\topmargin     }{ \vmargin }
+\setlength{\headheight    }{     12pt } % tiny fontsize
+\setlength{\headsep       }{ \padding }
+\setlength{\footskip      }{ \padding + 12pt }
+\setlength{\textheight    }{ \paperheight - 2\vmargin - \headheight - \headsep - \footskip }
+\setlength{\hoffset       }{ \hmargin - 72pt }
+\setlength{\marginparwidth}{      0pt }
+\setlength{\marginparsep  }{      0pt }
+\setlength{\textwidth     }{ \paperwidth  - 2\hmargin - \marginparwidth - \marginparsep }}
+\setlayout
+
+% display mode
+\hypersetup{
+pdfpagelayout=SinglePage,
+bookmarksopen=true,
+bookmarksopenlevel=2,
+colorlinks,
+citecolor=mycitecolor,
+linkcolor=mylinkcolor,
+filecolor=myfilecolor,
+urlcolor=myurlcolor}
+
+% TPcolor
+\defineTPcolor{pagecolor}{rgb}{1,1,1}
+\defineTPcolor{textcolor}{rgb}{0,0,0}
+\defineTPcolor{emcolor}{rgb}{0,0,0}
+\defineTPcolor{altemcolor}{rgb}{0,0,0}
+
+% title
+\let\org@title=\title
+\renewcommand{\title}[1]{
+\org@title{\color{mytitlecolor}%#1
+\vspace*{-\padding}\vspace{\fill}#1\vspace*{\fill}
+}}
+
+% maketitle
+\let\org@maketitle=\maketitle
+\renewcommand{\maketitle}[1][Title]{
+\pdfbookmark[1]{Title}{0}
+\org@maketitle\vspace*{\belowtitleskip}
+\clearpage}
+
+% foilhead
+\let\org@foilhead=\foilhead
+\renewcommand{\foilhead}[2][\foilheadskip]{
+\org@foilhead[#1]{\color{mytitlecolor}#2}}
+%\let\org@foilhead=\foilhead
+%\renewcommand{\foilhead}[1]{
+%\org@foilhead{\color{mytitlecolor}#1}}
+
+% section
+\DeclareDocumentCommand \section {s m}
+{
+	\phantomsection
+	\IfBooleanTF #1
+		{\pdfbookmark[\toclevel@section]{#2}{\@currentHref}}
+		{\addcontentsline{toc}{section}{#2}}
+	\def\secname{#2}
+	\def\secnamei{\textcolor{red}{-NoValue-}}
+	\def\secnameii{\textcolor{red}{-NoValue-}}
+}
+% subsection
+\DeclareDocumentCommand \subsection {s m}
+{
+	\phantomsection
+	\IfBooleanTF #1
+		{\pdfbookmark[\toclevel@subsection]{#2}{\@currentHref}}
+		{\addcontentsline{toc}{subsection}{#2}}
+	\def\secnamei{#2}
+	\def\secnameii{\textcolor{red}{-NoValue-}}
+}
+% subsubsection
+\DeclareDocumentCommand \subsubsection {s m}
+{
+	\phantomsection
+	\IfBooleanTF #1
+		{\pdfbookmark[\toclevel@subsubsection]{#2}{\@currentHref}}
+		{\addcontentsline{toc}{subsubsection}{#2}}
+	\def\secnameii{#2}
+}
+% frame
+\DeclareDocumentEnvironment {frame} {s O{~} O{~}}
+{
+	\foilhead{#2~#3}
+	\IfBooleanF #1 {\vspace*{\fill}}
+}{
+	\IfBooleanF #1 {\vspace*{\fill}\vspace*{\foilfootskip}}
+	\clearpage
+}
+% tableofcontents
+\setcounter{tocdepth}{3}
+\def\tableofcontents{
+\begin{frame}[\hypertarget{toc}{\contentsname}]
+\raggedright
+\ifnum\thetocncols>1 \begin{multicols}{\thetocncols} \fi
+\renewcommand {\labelitemi}{\tocitem}
+\begin{itemize}\parskip0pt
+\@input{\jobname.toc}%
+\end{itemize}
+\ifnum\thetocncols>1 \end{multicols} \fi
+\end{frame}
+}
+\def\contentsline#1{
+\csname l@#1\endcsname
+}
+\def\l@section#1#2#3{
+\ifnum\c@toclevel>0
+\item
+\ifnum\thepage=#2
+\hyperlink{#3}{\textcolor{red}{\bf#1}}
+\else
+\hyperlink{#3}{#1}
+\fi\fi
+}
+\def\l@subsection#1#2#3{
+\ifnum\c@toclevel>1
+\ifnum\thepage=#2
+\\\hyperlink{#3}{\hspace{1pt}\tocitemi\hspace{10pt}\textcolor{red}{\bf#1}}
+\else
+\\\hyperlink{#3}{\hspace{1pt}\tocitemi\hspace{10pt}#1}
+\fi\fi
+}
+\def\l@subsubsection#1#2#3{
+\ifnum\c@toclevel>2
+\ifnum\thepage=#2
+\\\hyperlink{#3}{\hspace{24pt}\tocitemii\hspace{10pt}\textcolor{red}{\bf#1}}
+\else
+\\\hyperlink{#3}{\hspace{24pt}\tocitemii\hspace{10pt}#1}
+\fi\fi
+}
+% endslide
+\def\endslide{% part B
+\begingroup
+\if@filesw
+\expandafter\newwrite\csname tf@toc\endcsname
+\immediate\openout \csname tf@toc\endcsname \jobname.toc\relax
+\fi
+\@nobreakfalse
+\endgroup
+}
+% addcolumnbreak
+\def\addcolumnbreak{
+\ifnum\thetocncols>1
+\addtocontents{toc}{
+\protect\vfill
+\protect\null
+\protect\columnbreak}
+\fi}
+
+% bibtex
+\renewcommand{\emph}[1]{\textsl{#1}}
+\renewcommand{\bibsection}{}
+\setlength{\bibsep}{0pt}
+
+% references
+\newcommand{\references}{
+\section*{References}
+\begin{frame}*[\secname]
+\citestyle{plain}
+\bibliographystyle{ieeetrann}
+\footnotesize
+\bibliography{foilref}
+\end{frame}}
+
+% makethanks
+\newcommand{\makethanks}{
+\begin{frame}[~]
+\begin{center}
+\Large Thank you!
+\vspace*{48pt}
+\end{center}
+\end{frame}}
+
+\endinput

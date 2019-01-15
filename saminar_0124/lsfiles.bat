@@ -1,0 +1,1 @@
+dir /B /S files\*.pdf > files.txt
