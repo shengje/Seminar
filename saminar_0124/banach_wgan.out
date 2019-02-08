@@ -1,3 +1,13 @@
 \BOOKMARK [1][]{0.1}{Title}{}% 1
 \BOOKMARK [1][]{section*.1}{Introduction}{}% 2
-\BOOKMARK [1][]{section*.2}{Summary}{}% 3
+\BOOKMARK [1][]{section*.2}{Background}{}% 3
+\BOOKMARK [2][-]{section*.3}{Generative adversarial networks}{section*.2}% 4
+\BOOKMARK [2][-]{section*.4}{Wasserstein metrics}{section*.2}% 5
+\BOOKMARK [2][-]{section*.5}{Wasserstein GAN}{section*.2}% 6
+\BOOKMARK [2][-]{section*.6}{Improved Wasserstein GAN}{section*.2}% 7
+\BOOKMARK [2][-]{section*.7}{Banach spaces}{section*.2}% 8
+\BOOKMARK [1][]{section*.8}{Banach Wasserstein GANs}{}% 9
+\BOOKMARK [2][-]{section*.9}{Enforcing the Lipschitz constraint}{section*.8}% 10
+\BOOKMARK [2][-]{section*.10}{Regularization parameter}{section*.8}% 11
+\BOOKMARK [1][]{section*.11}{Computational results}{}% 12
+\BOOKMARK [1][]{section*.12}{Conclusion}{}% 13
