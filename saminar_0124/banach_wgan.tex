@@ -91,6 +91,20 @@ Sebastian Lunz, University of Cambridge}
 \end{frame}
 
 %-----------------------------------------------------------%
+
+\begin{frame}[Wasserstein metrics]
+\begin{flushleft}
+\begin{itemize}
+\begin{figure}
+\center
+\includegraphics[scale=0.8]{figure/fig_wgan.png}
+\end{figure}
+
+\end{itemize}
+\end{flushleft}
+\end{frame}
+
+%-----------------------------------------------------------%
 \subsection{Wasserstein GAN}
 \tableofcontents
 \begin{frame}[Wasserstein GAN]
@@ -98,7 +112,7 @@ Sebastian Lunz, University of Cambridge}
 \begin{itemize}
 \item Implementing GANs with the Wasserstein metric requires to approximate the supremum in (3) with a neural network.
 \\
-\item Original WGAN \footnote{Martin Arjovsky, Soumith Chintala, and Leon Boeou. Wasserstein Generative Adversarial Networks.\textit{International Conference on Machine Learning,} \textsl{ICML}, 2017} using \textbf{weight clipping} to satisfy the Lipschitz constraint.
+\item Original WGAN \footnote{Martin Arjovsky, Soumith Chintala, and Leon Boeou. Wasserstein Generative Adversarial Networks.\textit{International Conference on Machine Learning,} \textsl{ICML}, 2017} using \textbf{weight clipping} to statisfy the Lipschitz constraint.
 \\
 \item However weight clipping in WGAN leads to optimization difficulties, and that even when optimization succeeds the resulting critic can have a pathological value surface.
 \end{itemize}
@@ -133,7 +147,7 @@ Sebastian Lunz, University of Cambridge}
 \begin{itemize}
 \item We often choose the $\ell^2$ norm as underlying distance measure on \textbf{image space}, but many other distance notions are possible that account for more specific image features.
 \\
-\item If a vector space $B$ is equipped with a notion of length, a norm $\Vert \cdot \Vert_B :B\rightarrow \mathbb{R}$, we call it a \textbf{normed space}.
+\item If a vector space $B$ is equipped with a notion of \textbf{length}, a norm $\Vert \cdot \Vert_B :B\rightarrow \mathbb{R}$, we call it a \textbf{normed space}.
 \\
 \item A normed space is called a \textbf{Banach space} if it is complete, that is, Cauchy sequences converge.
 \\

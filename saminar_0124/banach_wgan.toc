@@ -2,11 +2,11 @@
 \contentsline {section}{Background}{4}{section*.2}% 
 \contentsline {subsection}{Generative adversarial networks}{4}{section*.3}% 
 \contentsline {subsection}{Wasserstein metrics}{6}{section*.4}% 
-\contentsline {subsection}{Wasserstein GAN}{9}{section*.5}% 
-\contentsline {subsection}{Improved Wasserstein GAN}{11}{section*.6}% 
-\contentsline {subsection}{Banach spaces}{13}{section*.7}% 
-\contentsline {section}{Banach Wasserstein GANs}{17}{section*.8}% 
-\contentsline {subsection}{Enforcing the Lipschitz constraint}{19}{section*.9}% 
-\contentsline {subsection}{Regularization parameter}{23}{section*.10}% 
-\contentsline {section}{Computational results}{26}{section*.11}% 
-\contentsline {section}{Conclusion}{32}{section*.12}% 
+\contentsline {subsection}{Wasserstein GAN}{10}{section*.5}% 
+\contentsline {subsection}{Improved Wasserstein GAN}{12}{section*.6}% 
+\contentsline {subsection}{Banach spaces}{14}{section*.7}% 
+\contentsline {section}{Banach Wasserstein GANs}{18}{section*.8}% 
+\contentsline {subsection}{Enforcing the Lipschitz constraint}{20}{section*.9}% 
+\contentsline {subsection}{Regularization parameter}{24}{section*.10}% 
+\contentsline {section}{Computational results}{27}{section*.11}% 
+\contentsline {section}{Conclusion}{33}{section*.12}% 
