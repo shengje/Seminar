@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.25)  14 FEB 2019 12:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.25)  20 FEB 2019 11:03
 entering extended mode
 **./banach_wgan.tex
 (banach_wgan.tex
@@ -742,24 +742,24 @@ LaTeX Info: Redefining \nameref on input line 6.
 \@outlinefile=\write4
 \openout4 = `banach_wgan.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 24.
+LaTeX Font Info:    Try loading font information for U+msa on input line 23.
 
 ("C:\Users\SJH\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 24.
+LaTeX Font Info:    Try loading font information for U+msb on input line 23.
 
 ("C:\Users\SJH\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 24.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 23.
 
 ("C:\Users\SJH\AppData\Local\Programs\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <29.86> not available
-(Font)              size <24.88> substituted on input line 24.
+(Font)              size <24.88> substituted on input line 23.
 
 [0
 
@@ -770,7 +770,7 @@ LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <29.86> not available
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.27 \tableofcontents
+l.26 \tableofcontents
                       (banach_wgan.toc) [2
 
 ] [3
@@ -779,7 +779,7 @@ l.27 \tableofcontents
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.42 \tableofcontents
+l.41 \tableofcontents
                       (banach_wgan.toc) [4
 
 ] [5
@@ -788,7 +788,7 @@ l.42 \tableofcontents
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.59 \tableofcontents
+l.58 \tableofcontents
                       (banach_wgan.toc) [6
 
 ] [7
@@ -799,7 +799,7 @@ l.59 \tableofcontents
 <figure/fig_wgan.png, id=164, 663.22781pt x 344.78813pt>
 File: figure/fig_wgan.png Graphic file (type png)
 <use figure/fig_wgan.png>
-Package pdftex.def Info: figure/fig_wgan.png  used on input line 100.
+Package pdftex.def Info: figure/fig_wgan.png  used on input line 99.
 (pdftex.def)             Requested size: 530.58298pt x 275.83087pt.
  [9
 
@@ -807,12 +807,12 @@ Package pdftex.def Info: figure/fig_wgan.png  used on input line 100.
 ifier (name{toc}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.109 \tableofcontents
+l.108 \tableofcontents
                        (banach_wgan.toc) [10
 
 ]
 LaTeX Font Info:    Font shape `OT1/fcmss/m/it' in size <14.4> not available
-(Font)              Font shape `OT1/fcmr/m/it' tried instead on input line 115.
+(Font)              Font shape `OT1/fcmr/m/it' tried instead on input line 114.
 
  [11
 
@@ -820,7 +820,7 @@ LaTeX Font Info:    Font shape `OT1/fcmss/m/it' in size <14.4> not available
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.124 \tableofcontents
+l.123 \tableofcontents
                        (banach_wgan.toc) [12
 
 ] [13
@@ -829,7 +829,7 @@ l.124 \tableofcontents
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.144 \tableofcontents
+l.143 \tableofcontents
                        (banach_wgan.toc) [14
 
 ] [15
@@ -842,7 +842,7 @@ l.144 \tableofcontents
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.200 \tableofcontents
+l.199 \tableofcontents
                        (banach_wgan.toc) [18
 
 ] [19
@@ -851,105 +851,103 @@ l.200 \tableofcontents
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.215 \tableofcontents
+l.218 \tableofcontents
                        (banach_wgan.toc) [20
 
 ]
 LaTeX Font Info:    Font shape `OT1/fcmss/m/it' in size <20.74> not available
-(Font)              Font shape `OT1/fcmr/m/it' tried instead on input line 220.
+(Font)              Font shape `OT1/fcmr/m/it' tried instead on input line 223.
 
  [21
 
 ] [22
 
-] [23
-
 ]pdfTeX warning (ext4): destination with the same identifier (name{toc}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.267 \tableofcontents
-                       (banach_wgan.toc) [24
+l.270 \tableofcontents
+                       (banach_wgan.toc) [23
+
+] [24
 
 ] [25
 
-] [26
-
 ]pdfTeX warning (ext4): destination with the same identifier (name{toc}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.311 \tableofcontents
-                       (banach_wgan.toc) [27
+l.314 \tableofcontents
+                       (banach_wgan.toc) [26
 
 ]
-<figure/fig1.png, id=365, 910.15031pt x 340.27126pt>
+<figure/fig1.png, id=359, 910.15031pt x 340.27126pt>
 File: figure/fig1.png Graphic file (type png)
 <use figure/fig1.png>
-Package pdftex.def Info: figure/fig1.png  used on input line 318.
+Package pdftex.def Info: figure/fig1.png  used on input line 321.
 (pdftex.def)             Requested size: 728.12125pt x 272.21736pt.
 
-Overfull \hbox (29.15126pt too wide) in paragraph at lines 318--319
+Overfull \hbox (29.15126pt too wide) in paragraph at lines 321--322
  [] 
  []
 
-[28
+[27
 
  <./figure/fig1.png>]
-<figure/fig2.png, id=373, 868.74562pt x 345.54094pt>
+<figure/fig2.png, id=367, 868.74562pt x 345.54094pt>
 File: figure/fig2.png Graphic file (type png)
 <use figure/fig2.png>
-Package pdftex.def Info: figure/fig2.png  used on input line 334.
+Package pdftex.def Info: figure/fig2.png  used on input line 337.
 (pdftex.def)             Requested size: 694.99744pt x 276.43312pt.
- [29
+ [28
 
  <./figure/fig2.png>]
-<figure/fig3.png, id=381, 883.80188pt x 326.72063pt>
+<figure/fig3.png, id=375, 883.80188pt x 326.72063pt>
 File: figure/fig3.png Graphic file (type png)
 <use figure/fig3.png>
-Package pdftex.def Info: figure/fig3.png  used on input line 350.
+Package pdftex.def Info: figure/fig3.png  used on input line 353.
 (pdftex.def)             Requested size: 707.04247pt x 261.37685pt.
 
-Overfull \hbox (8.07248pt too wide) in paragraph at lines 350--351
+Overfull \hbox (8.07248pt too wide) in paragraph at lines 353--354
  [] 
  []
 
-[30
+[29
 
  <./figure/fig3.png>]
-<figure/fig4.png, id=390, 563.85657pt x 373.395pt>
+<figure/fig4.png, id=383, 563.85657pt x 373.395pt>
 File: figure/fig4.png Graphic file (type png)
 <use figure/fig4.png>
-Package pdftex.def Info: figure/fig4.png  used on input line 365.
+Package pdftex.def Info: figure/fig4.png  used on input line 368.
 (pdftex.def)             Requested size: 451.08586pt x 298.7164pt.
- [31
+ [30
 
  <./figure/fig4.png>]
-<figure/fig6.png, id=398, 869.49844pt x 344.78813pt>
+<figure/fig6.png, id=392, 869.49844pt x 344.78813pt>
 File: figure/fig6.png Graphic file (type png)
 <use figure/fig6.png>
-Package pdftex.def Info: figure/fig6.png  used on input line 381.
+Package pdftex.def Info: figure/fig6.png  used on input line 384.
 (pdftex.def)             Requested size: 695.5997pt x 275.83087pt.
- [32
+ [31
 
  <./figure/fig6.png>]pdfTeX warning (ext4): destination with the same identifie
 r (name{toc}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.407 \tableofcontents
-                       (banach_wgan.toc) [33
+l.410 \tableofcontents
+                       (banach_wgan.toc) [32
 
-] [34
+] [33
 
 ]
 \tf@toc=\write5
 \openout5 = `banach_wgan.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 423.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 423.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 426.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 426.
  (banach_wgan.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 423.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 423.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 426.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 426.
 Package rerunfilecheck Info: File `banach_wgan.out' has not changed.
 (rerunfilecheck)             Checksum: AF665DAF8EC33FD0072A8680842F0717;786.
 
@@ -957,11 +955,11 @@ Package rerunfilecheck Info: File `banach_wgan.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 4.98pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 423.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 426.
  ) 
 Here is how much of TeX's memory you used:
- 18335 strings out of 492946
- 320340 string characters out of 3127154
+ 18333 strings out of 492946
+ 320322 string characters out of 3127154
  389910 words of memory out of 3000000
  22006 multiletter control sequences out of 15000+200000
  546856 words of font info for 83 fonts, out of 3000000 for 9000
@@ -984,9 +982,9 @@ ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/SJH/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Us
 ers/SJH/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
 sbm10.pfb>
-Output written on banach_wgan.pdf (35 pages, 1736917 bytes).
+Output written on banach_wgan.pdf (34 pages, 1733995 bytes).
 PDF statistics:
- 489 PDF objects out of 1000 (max. 8388607)
- 69 named destinations out of 1000 (max. 500000)
+ 483 PDF objects out of 1000 (max. 8388607)
+ 67 named destinations out of 1000 (max. 500000)
  135 words of extra memory for PDF output out of 10000 (max. 10000000)
 

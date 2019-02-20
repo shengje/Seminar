@@ -4,7 +4,6 @@
 \usepackage{amsfonts}
 
 \begin{document}
-
 \title       {Banach Wessenstian GAN
 \footnote{Jonas Adler, KTH-Royal institute of Technology Research and Physics \\
 Sebastian Lunz, University of Cambridge}
@@ -112,7 +111,7 @@ Sebastian Lunz, University of Cambridge}
 \begin{itemize}
 \item Implementing GANs with the Wasserstein metric requires to approximate the supremum in (3) with a neural network.
 \\
-\item Original WGAN \footnote{Martin Arjovsky, Soumith Chintala, and Leon Boeou. Wasserstein Generative Adversarial Networks.\textit{International Conference on Machine Learning,} \textsl{ICML}, 2017} using \textbf{weight clipping} to statisfy the Lipschitz constraint.
+\item Original WGAN \footnote{Martin Arjovsky, Soumith Chintala, and Leon Boeou. Wasserstein Generative Adversarial Networks.\textit{International Conference on Machine Learning,} \textsl{ICML}, 2017} using \textbf{weight clipping} to satisfy the Lipschitz constraint.
 \\
 \item However weight clipping in WGAN leads to optimization difficulties, and that even when optimization succeeds the resulting critic can have a pathological value surface.
 \end{itemize}
@@ -142,7 +141,7 @@ Sebastian Lunz, University of Cambridge}
 %-----------------------------------------------------------%
 \subsection{Banach spaces}
 \tableofcontents
-\begin{frame}[Banach spaces (1/3)]
+\begin{frame}[Banach spaces - norm space]
 \begin{flushleft}
 \begin{itemize}
 \item We often choose the $\ell^2$ norm as underlying distance measure on \textbf{image space}, but many other distance notions are possible that account for more specific image features.
@@ -157,7 +156,7 @@ Sebastian Lunz, University of Cambridge}
 \end{frame}
 
 %-----------------------------------------------------------%
-\begin{frame}[Banach spaces (2/3)]
+\begin{frame}[Banach spaces - dual space]
 \begin{flushleft}
 \begin{itemize}
 \item For any Banach space B, we can consider the space of all bounded linear functionals $B \rightarrow \mathbb{R}$, which we will denote $B^*$ and call the \textbf{topological dual of $B$}.
@@ -171,7 +170,7 @@ Sebastian Lunz, University of Cambridge}
 \end{frame}
 
 %-----------------------------------------------------------%
-\begin{frame}[Banach spaces (3/3)]
+\begin{frame}[Banach spaces - examples]
 \begin{flushleft}
 The set of functions $x:\Omega \rightarrow \mathbb{R}$ with \textbf{norm}
 \begin{itemize}
@@ -201,6 +200,10 @@ It can rewrite the equation by multiplying with $\xi$ in the Fourier space
 \begin{frame}[Banach Wasserstein GANs]
 \begin{flushleft}
 \begin{itemize}
+\item The loss function of WGAN-GP is
+\begin{center}
+$L = \mathbb{E}_{X \sim \mathbb{P}_{\theta}} D(X)-\mathbb{E}_{X \sim \mathbb{P}_{r}} D(X) + \lambda \mathbb{E}_{\hat{X}} \left(\Vert \bigtriangledown_{\hat{x}} D(\hat{X}) \Vert_{2} - 1 \right)^2$
+\end{center}
 \item In particular, for any Banach space $B$ with norm $ \Vert\cdot\Vert_B$, we will derive the loss function
 \begin{equation}
 L = \dfrac{1}{\gamma} (\mathbb{E}_{X \sim \mathbb{P}_{\theta}} D(X)-\mathbb{E}_{X \sim \mathbb{P}_{r}} D(X)) + \lambda \mathbb{E}_{\hat{X}} \left(\dfrac{1}{\gamma} \textcolor{red}{\Vert \partial D(\hat{X}) \Vert_{B^*}} - 1 \right)^2
@@ -213,7 +216,7 @@ where $\lambda,\gamma \in \mathbb{R}$ are \textbf{regularization parameters}.
 %-----------------------------------------------------------%
 \subsection{Enforcing the Lipschitz constraint}
 \tableofcontents
-\begin{frame}[Enforcing the Lipschitz constraint (1/3)]
+\begin{frame}[Enforcing the Lipschitz constraint (1/2)]
 \begin{flushleft}
 \begin{itemize}
 \item We require a more \textbf{general notion of gradient}: \\
@@ -228,7 +231,7 @@ The function $f$ is call \textit{Fréchet differentiable} at $x \in B$ if there 
 \end{frame}
 
 %-----------------------------------------------------------%
-\begin{frame}[Enforcing the Lipschitz constraint (2/3)]
+\begin{frame}[Enforcing the Lipschitz constraint (2/2)]
 \begin{flushleft}
 \begin{itemize}
 \item \textbf{Lemma 1}
@@ -246,21 +249,21 @@ $|f(x) - f(y)| \leq \gamma \Vert x-y \Vert_B$ \\
 \end{frame}
 
 %-----------------------------------------------------------%
-\begin{frame}[Enforcing the Lipschitz constraint (3/3)]
-\begin{flushleft}
-\begin{itemize}
-\item Gradient norm penalization requires characterizing the dual $B^*$ of $B$. In a \textbf{finite dimension}, there is an linear continuous bijection $\iota: \mathbb{R}^n \rightarrow B$ given by
-\begin{equation}
-\iota(x)_i = x_i.
-\end{equation}
-%\item Although this does not generalize to the infinite dimensional setting, we hope that this is not a very limiting assumption in practice. \\
-\item We can write $f = g\circ \iota$  where $g: \mathbb{R}^n \rightarrow \mathbb{R}$ and we can get  $ \partial f(x) = \iota^* (\partial g(\iota(x)))$ by the \textbf{chain rule}.
-($\iota^* :\mathbb{R}^n \rightarrow B^*$ is the adjoint of $\iota$.) \\
-\item The derivative in \textbf{finite dimensional Banach spaces} can be done using standard automatic differentiation libraries. \\
-
-\end{itemize}
-\end{flushleft}
-\end{frame}
+%\begin{frame}[Enforcing the Lipschitz constraint (3/3)]
+%\begin{flushleft}
+%\begin{itemize}
+%\item Gradient norm penalization requires characterizing the dual $B^*$ of $B$. In a \textbf{finite dimension}, there is an linear continuous bijection $\iota: \mathbb{R}^n \rightarrow B$ given by
+%\begin{equation}
+%\iota(x)_i = x_i.
+%\end{equation}
+%%\item Although this does not generalize to the infinite dimensional setting, we hope that this is not a very limiting assumption in practice. \\
+%\item We can write $f = g\circ \iota$  where $g: \mathbb{R}^n \rightarrow \mathbb{R}$ and we can get  $ \partial f(x) = \iota^* (\partial g(\iota(x)))$ by the \textbf{chain rule}.
+%($\iota^* :\mathbb{R}^n \rightarrow B^*$ is the adjoint of $\iota$.) \\
+%\item The derivative in \textbf{finite dimensional Banach spaces} can be done using standard automatic differentiation libraries. \\
+%
+%\end{itemize}
+%\end{flushleft}
+%\end{frame}
 
 %-----------------------------------------------------------%
 \subsection{Regularization parameter}
@@ -273,7 +276,7 @@ $|f(x) - f(y)| \leq \gamma \Vert x-y \Vert_B$ \\
 $ \textcolor{red}{\lambda} \mathbb{E}_{\hat{X}} \left(\dfrac{1}{\textcolor{red}{\gamma}} \Vert \partial D(\hat{X})\Vert_{B^*} - 1 \right)^2$. \\
 \end{center}
 \item In order to avoid having to hand-tune parameters for every choice of norm, author derive some \textbf{heuristic parameter} choice rules. \\
-\item Assuming that $G$ is the zero-generator and symmetry of $\mathbb{P}_r$, the $D$ will be decided by a single constant $f(x) = c \Vert x \Vert_B$. \\
+\item Assuming that $G$ is the \textbf{zero-generator} and symmetry of $\mathbb{P}_r$, the $D$ will be decided by a \textbf{single constant} $f(x) = c \Vert x \Vert_B$. \\
 We can form the optimization problem
 \begin{center}
 $\mathop{\min}_{c \in \mathbb{R}} \mathbb{E}_{X \sim \mathbb{P}_r} \left[-\dfrac{c \Vert X \Vert_B}{\gamma} + \dfrac{\lambda(c- \gamma)^2}{\gamma^2} \right]$.
@@ -291,13 +294,13 @@ $\mathop{\min}_{c \in \mathbb{R}} \mathbb{E}_{X \sim \mathbb{P}_r} \left[-\dfrac
 \begin{center}
 $c = \gamma \left(1+\dfrac{\mathbb{E}_{X \sim \mathbb{P}_r} \Vert X \Vert_B}{2 \lambda} \right)$. \\
 \end{center}
-\item Since the norm has Lipschitz constant 1, we want $c\approx \gamma$. To has a small relative error, we get the heuristic rule
+\item Since the norm has Lipschitz constant 1, we want $c\approx \gamma$. To have a small relative error, we get the heuristic rule
 \begin{center}
 $ \lambda \approx \mathbb{E}_{X \sim \mathbb{P}_r} \Vert X \Vert_B$. \\
 \end{center}
 \item 
 Assuming $\lambda$ was appropriately chosen, we find in general (by lemma 1) $\Vert \partial D(x) \Vert_{B^*} \approx \gamma$. We want to enforce $\Vert x \Vert_{B^*} \approx \Vert \partial D(x) \Vert_{B^*}$, hence $\gamma \approx \Vert x \Vert_{B^*}$. \\
-\item We pick the expected values as a represnetative, we can finally obtain the heuristic
+\item We pick the expected values as a representative, we can finally obtain the heuristic
 \begin{center}
 $\gamma \approx \mathbb{E}_{X \sim \mathbb{P}_r} \Vert X \Vert_{B^*}$.
 \end{center}
